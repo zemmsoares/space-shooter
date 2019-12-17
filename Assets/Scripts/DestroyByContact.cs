@@ -8,7 +8,10 @@ public class DestroyByContact : MonoBehaviour {
 	public int scoreValue;
 	private GameController gameController;
 
-	void Start() {
+    public GameObject Canvas;
+
+
+    void Start() {
 		GameObject gameControllerObject = GameObject.FindWithTag ("GameController");
 		if (gameControllerObject != null) {
 			gameController = gameControllerObject.GetComponent <GameController>();
@@ -32,7 +35,9 @@ public class DestroyByContact : MonoBehaviour {
 		gameController.AddScore (scoreValue);
 		Destroy (other.gameObject);
 		Destroy (gameObject);
-        
-        
-	}
+
+        Canvas.SetActive(false);
+
+
+    }
 }
